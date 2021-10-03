@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const UniqueValidator = require('mongoose-unique-validator');
 
 const UserSchema = new Schema({
   full_name: {
@@ -27,6 +28,10 @@ const UserSchema = new Schema({
     minlength: 8,
     select: false
   }
+});
+
+UserSchema.plugin(UniqueValidator, {
+  message: 'The given {PATH} is already in use.'
 });
 
 const UserModel = model('User', UserSchema);

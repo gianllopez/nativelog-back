@@ -9,7 +9,7 @@ function errorHandler(err, req, res, next) {
   };
   res.status(500).json({
     error: true,
-    message: 'Something went wrong, try again later.'
+    message: 'Something went wrong.'
   });
 };
 
