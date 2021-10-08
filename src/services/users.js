@@ -4,7 +4,7 @@ const { UserModel } = require('../models/User');
 class UsersService {
 
   constructor() {
-    mongoose.connect('mongodb://localhost:27017/nativelog')
+    mongoose.connect(process.env.DB_URI)
       .catch(err => console.error(err));
   };
 

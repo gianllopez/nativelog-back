@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express = require('express');
 const app = express();
 
@@ -39,6 +37,6 @@ app.post('/login', async (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(8080, () => {
-  console.log('Server listening on http://locahost:8080');
+app.listen(process.env.PORT || 8080, () => {
+  console.log('Server is ready.');
 });
